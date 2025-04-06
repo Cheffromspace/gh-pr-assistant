@@ -27,7 +27,7 @@ import { startServer } from '@gh-ai-pr-assistant/mcp-server';
 
 // Start with default settings (stdio transport)
 const server = startServer({
-  githubToken: 'your-github-token' // Or set via process.env.GITHUB_TOKEN
+  githubToken: 'your-github-token' // Or set via process.env.GITHUB_ACCESS_TOKEN
 });
 ```
 
@@ -57,7 +57,7 @@ const serverProcess = spawn('node', ['server.js'], {
   stdio: ['pipe', 'pipe', 'pipe'],
   env: {
     ...process.env,
-    GITHUB_TOKEN: 'your-github-token'
+    GITHUB_ACCESS_TOKEN: 'your-github-token'
   }
 });
 

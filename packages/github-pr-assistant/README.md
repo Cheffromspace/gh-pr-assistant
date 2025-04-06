@@ -24,7 +24,7 @@ import { PRReviewClient } from '@gh-ai-pr-assistant/github-pr-assistant';
 
 const client = new PRReviewClient({
   anthropicApiKey: 'your-anthropic-api-key', // Or set via process.env.ANTHROPIC_API_KEY
-  githubToken: 'your-github-token', // Or set via process.env.GITHUB_TOKEN
+  githubToken: 'your-github-token', // Or set via process.env.GITHUB_ACCESS_TOKEN
   model: 'claude-3-7-sonnet-20250219' // Optional
 });
 
@@ -45,7 +45,7 @@ console.log(review.content);
 ```bash
 # Set environment variables
 export ANTHROPIC_API_KEY=your-anthropic-api-key
-export GITHUB_TOKEN=your-github-token
+export GITHUB_ACCESS_TOKEN=your-github-token
 
 # Run the review
 gh-ai-pr-review review --owner your-org --repo your-repo --pr 123

@@ -22,7 +22,7 @@ npm run build
 
 # Set environment variables
 export ANTHROPIC_API_KEY=your-anthropic-api-key
-export GITHUB_TOKEN=your-github-token
+export GITHUB_ACCESS_TOKEN=your-github-token
 
 # Run a PR review
 node packages/github-pr-assistant/dist/cli.js review --owner your-org --repo your-repo --pr 123

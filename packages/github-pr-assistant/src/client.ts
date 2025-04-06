@@ -20,7 +20,7 @@ export class PRReviewClient {
     // Set defaults and apply provided config
     this.config = {
       anthropicApiKey: config.anthropicApiKey || process.env.ANTHROPIC_API_KEY || '',
-      githubToken: config.githubToken || process.env.GITHUB_TOKEN || '',
+      githubToken: config.githubToken || process.env.GITHUB_ACCESS_TOKEN || '',
       model: config.model || 'claude-3-sonnet-20240229',
       maxTokens: config.maxTokens || 4000
     };
@@ -30,7 +30,7 @@ export class PRReviewClient {
     }
     
     if (!this.config.githubToken) {
-      throw new Error('GitHub token is required. Provide it in the config or set GITHUB_TOKEN environment variable.');
+      throw new Error('GitHub token is required. Provide it in the config or set GITHUB_ACCESS_TOKEN environment variable.');
     }
     
     // Initialize Anthropic client
@@ -65,7 +65,7 @@ startServer();
         stdio: ['pipe', 'pipe', 'pipe'],
         env: {
           ...process.env,
-          GITHUB_TOKEN: this.config.githubToken
+          GITHUB_ACCESS_TOKEN: this.config.githubToken
         }
       });
 

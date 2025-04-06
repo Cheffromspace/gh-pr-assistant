@@ -35,7 +35,7 @@ class McpServer {
  * @returns Configured MCP server instance
  */
 export function createPRReviewServer(config: ServerConfig = {}) {
-  const githubToken = config.githubToken || process.env.GITHUB_TOKEN;
+  const githubToken = config.githubToken || process.env.GITHUB_ACCESS_TOKEN;
   
   if (!githubToken) {
     console.warn('Warning: No GitHub token provided. API requests will be rate-limited and may fail for private repositories.');
