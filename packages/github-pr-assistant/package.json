@@ -1,0 +1,42 @@
+{
+  "name": "@gh-ai-pr-assistant/github-pr-assistant",
+  "version": "0.1.0",
+  "description": "GitHub PR review assistant using Anthropic Claude and MCP",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "gh-ai-pr-review": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint . --ext .ts",
+    "start": "node dist/cli.js"
+  },
+  "keywords": [
+    "github",
+    "pr",
+    "review",
+    "anthropic",
+    "claude",
+    "mcp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.6.2",
+    "@gh-ai-pr-assistant/mcp-server": "^0.1.0",
+    "@octokit/rest": "^20.0.2",
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.38.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.4"
+  }
+}
